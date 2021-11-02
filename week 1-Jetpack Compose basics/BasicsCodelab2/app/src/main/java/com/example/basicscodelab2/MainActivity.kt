@@ -1,6 +1,6 @@
-package com.example.basicscodelab
+package com.example.basicscodelab2
 
-import android.content.res.Configuration.UI_MODE_NIGHT_YES
+import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -10,7 +10,8 @@ import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.spring
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ExpandLess
@@ -23,13 +24,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.basicscodelab.ui.theme.BasicsCodelabTheme
+import com.example.basicscodelab2.ui.theme.BasicsCodelab2Theme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            BasicsCodelabTheme {
+            BasicsCodelab2Theme {
                 MyApp()
             }
         }
@@ -45,7 +46,6 @@ private fun MyApp() {
     var shouldShowOnboarding by rememberSaveable { mutableStateOf(true) }
 
     if (shouldShowOnboarding) {
-        Toast.makeText(,"ㅌㅌㅌ",Toast.LENGTH_SHORT).show()
         OnboardingScreen(onContinueClicked = { shouldShowOnboarding = false })
     } else {
         Log.d("LogcatLog", "none open the group")
@@ -170,13 +170,13 @@ private fun CardContent(name: String) {
 @Preview(
     showBackground = true,
     widthDp = 320,
-    uiMode = UI_MODE_NIGHT_YES,
+    uiMode = Configuration.UI_MODE_NIGHT_YES,
     name = "DefaultPreviewDark"
 )
 @Preview(showBackground = true, widthDp = 320)
 @Composable
 fun DefaultPreview() {
-    BasicsCodelabTheme {
+    BasicsCodelab2Theme {
         Greetings()
     }
 }
@@ -203,8 +203,7 @@ private fun OnboardingScreen(onContinueClicked: () -> Unit) {
 @Preview(showBackground = true, widthDp = 320, heightDp = 320)
 @Composable
 fun OnboardingPreview() {
-    BasicsCodelabTheme {
+    BasicsCodelab2Theme {
         OnboardingScreen(onContinueClicked = {})
     }
 }
-
