@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-        jcenter() // Warning: this repository is going to shut down soon
-    }
-}
-=======
 /*
  * Copyright 2021 The Android Open Source Project
  *
@@ -15,7 +5,7 @@ dependencyResolutionManagement {
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -24,6 +14,11 @@ dependencyResolutionManagement {
  * limitations under the License.
  */
 
->>>>>>> 1579060219755855004d2e58319b3a3213dcfe6b
-rootProject.name = "BasicsCodelab"
-include ':app'
+package com.codelab.basics.ui
+
+import androidx.compose.ui.graphics.Color
+
+val Navy = Color(0xFF073042)
+val Blue = Color(0xFF4285F4)
+val LightBlue = Color(0xFFD7EFFE)
+val Chartreuse = Color(0xFFEFF7CF)
